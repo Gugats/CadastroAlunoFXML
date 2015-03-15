@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.collections.*?>
+
+<GridPane fx:controller="cadastroaluno.FXMLDocumentController" 
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <padding>
+        <Insets top="25" right="25" bottom="10" left="25"/>
+    </padding>
+
+
+    <Text id="welcome-text" text="Cadastro de Alunos" 
+          GridPane.columnIndex="0" GridPane.rowIndex="0"
+          GridPane.columnSpan="2" GridPane.rowSpan="1" />
+ 
+    <Label text="RA: " 
+           GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+ 
+    <TextField fx:id="tfRa" 
+               GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+ 
+    <Label text="Nome: "
+           GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+ 
+    
+    <TextField fx:id="tfNome" 
+                   GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    
+    <Label text="Sexo: "
+           GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    
+    <HBox spacing="10"
+          GridPane.columnIndex="1" GridPane.rowIndex="3">
+        <fx:define>
+            <ToggleGroup fx:id="myToggleGroup"/>
+        </fx:define>
+        <children>
+            <RadioButton fx:id="rbMasc" text="Masc" toggleGroup="$myToggleGroup" selected="true" />
+            <RadioButton fx:id="rbFemin" text="Femin" toggleGroup="$myToggleGroup"/>
+        </children>
+    </HBox>
+
+    <Label text="Estado: "
+           GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    
+    <ComboBox fx:id="combo" GridPane.columnIndex="1" GridPane.rowIndex="4" > 
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="MS" />
+                <String fx:value="SP" />
+                <String fx:value="PR" />
+                <String fx:value="RS" />
+            </FXCollections>
+        </items>
+    </ComboBox>
+    
+    <HBox spacing="10" alignment="BOTTOM_RIGHT"
+          GridPane.columnIndex="1" GridPane.rowIndex="5">
+        <Button text="Limpar" onAction="#limparCampos" ></Button>
+        <Button text="Salvar" onAction="#salvarDados" ></Button>
+    </HBox>
+    
+</GridPane>

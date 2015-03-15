@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.collections.*?>
+
+<GridPane fx:controller="cadastroaluno.ComprovanteCadastro" 
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10" >
+    <padding>
+        <Insets top="25" right="25" bottom="10" left="25"/>
+    </padding>
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="80.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+    </columnConstraints>
+
+
+    <Text id="welcome-text" text="Comprovante de Cadastro" 
+          GridPane.columnIndex="0" GridPane.rowIndex="0"
+          GridPane.columnSpan="2" GridPane.rowSpan="1" />
+    
+    <Button text="Exibir" GridPane.columnIndex="0" GridPane.rowIndex="1" onAction="#imprime" ></Button>
+    
+    <Label fx:id="ra" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <Label fx:id="nome" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <Label fx:id="sexo" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <Label fx:id="estado" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+
+</GridPane>
