@@ -1,28 +1,23 @@
 
 package cadastroaluno;
 
-import cadastroaluno.Aluno;
-import cadastroaluno.GerenciadorAluno;
-import java.util.List;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
 public class ComprovanteCadastro {
     
-    @FXML private Label sexo, nome, ra, estado;
+    @FXML private TableView<Aluno> table = new TableView<Aluno>();
+    @FXML private TableColumn raC, nomeC, estadoC, sexoC;
     
     GerenciadorAluno ga = new GerenciadorAluno();
-    List<Aluno> alunos = ga.getAlunos();
-    
-    Aluno a = alunos.get(0);
+    final ObservableList<Aluno> alunos = ga.getAlunos();
     
     @FXML
-    protected void imprime(ActionEvent event){
-        nome.setText("Nome: "+a.getNome());
-        ra.setText("RA: "+a.getRa());
-        sexo.setText("Sexo: "+a.getSexo());
-        estado.setText("Estado: "+a.getEstado());
+    protected void imprime(ActionEvent event){ 
+        table.setItems(alunos);
     }
     
 }

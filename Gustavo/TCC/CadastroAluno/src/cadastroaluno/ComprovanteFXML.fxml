@@ -3,9 +3,11 @@
 <?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.collections.*?>
+<?import cadastroaluno.*?>
 
 <GridPane fx:controller="cadastroaluno.ComprovanteCadastro" 
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10" >
@@ -22,11 +24,34 @@
           GridPane.columnIndex="0" GridPane.rowIndex="0"
           GridPane.columnSpan="2" GridPane.rowSpan="1" />
     
-    <Button text="Exibir" GridPane.columnIndex="0" GridPane.rowIndex="1" onAction="#imprime" ></Button>
+    <Button text="Exibir" GridPane.columnIndex="0" GridPane.rowIndex="2" onAction="#imprime" ></Button>
     
-    <Label fx:id="ra" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-    <Label fx:id="nome" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-    <Label fx:id="sexo" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
-    <Label fx:id="estado" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+    <TableView fx:id="table" GridPane.columnIndex="0" GridPane.rowIndex="1" maxWidth="400"  >
+        <columns>
+            <TableColumn fx:id="raC" text="RA" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="ra" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="nomeC" text="Nome" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="nome" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="estadoC" text="Estado" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="estado" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="sexoC" text="Sexo" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="sexo" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+        <items>
+            
+        </items>
+    </TableView>
 
 </GridPane>

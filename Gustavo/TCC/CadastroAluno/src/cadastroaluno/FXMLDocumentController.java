@@ -57,7 +57,7 @@ public class FXMLDocumentController {
         Parent root = FXMLLoader.load(getClass().getResource("ComprovanteFXML.fxml"));
         Stage stage = new Stage();
         stage.setTitle("Comprovante");
-        Scene scene = new Scene(root, 400, 370);
+        Scene scene = new Scene(root, 650, 450);
         stage.setScene(scene);
         scene.getStylesheets().add(CadastroAluno.class.getResource("CadastroAluno.css").toExternalForm());
         stage.show();
